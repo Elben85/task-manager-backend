@@ -2,7 +2,7 @@ class CreateTasks < ActiveRecord::Migration[6.1]
   def change
     create_table :tasks do |t|
       t.integer :userId
-      t.string :taskname
+      t.string :taskName
       t.string :description
       t.string :tags
       t.string :schedule
