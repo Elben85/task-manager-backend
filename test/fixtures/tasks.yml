@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  userId: 1
+  taskname: MyString
+  description: MyString
+  tags: MyString
+  schedule: MyString
+  taskType: MyString
+
+two:
+  userId: 1
+  taskname: MyString
+  description: MyString
+  tags: MyString
+  schedule: MyString
+  taskType: MyString
