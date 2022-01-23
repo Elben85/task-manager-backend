@@ -11,14 +11,14 @@ class TaskController < ApplicationController
 
   def update
     task = Task.find(params[:id]);
-    task.update_attributes(task_param);
+    task.update(task_param);
     render json: task;
   end
 
   def destroy
     task = Task.find(params[:id]);
-    task.update_attributes(task_param);
-    render json: task;
+    task.destroy;
+    head :no_content, status: :ok;
   end
 
   private
