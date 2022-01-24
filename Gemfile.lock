@@ -47,6 +47,8 @@ GEM
     activerecord (6.1.4.4)
       activemodel (= 6.1.4.4)
       activesupport (= 6.1.4.4)
+    activerecord-postgresql-adapter (0.0.1)
+      pg
     activestorage (6.1.4.4)
       actionpack (= 6.1.4.4)
       activejob (= 6.1.4.4)
@@ -135,7 +137,6 @@ GEM
       actionpack (>= 5.2)
       activesupport (>= 5.2)
       sprockets (>= 3.0.0)
-    sqlite3 (1.4.2)
     thor (1.2.1)
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
@@ -148,6 +149,7 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
+  activerecord-postgresql-adapter
   bootsnap (>= 1.4.4)
   byebug
   listen (~> 3.3)
@@ -156,7 +158,6 @@ DEPENDENCIES
   rack-cors
   rails (~> 6.1.4, >= 6.1.4.4)
   spring
-  sqlite3 (~> 1.4)
   tzinfo-data
 
 RUBY VERSION

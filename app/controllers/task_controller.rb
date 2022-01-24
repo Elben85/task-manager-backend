@@ -1,6 +1,6 @@
 class TaskController < ApplicationController
   def index
-    tasks = Task.order(:timestamps);
+    tasks = Task.order(:id);
     render json: tasks;
   end
 
