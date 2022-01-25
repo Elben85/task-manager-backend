@@ -7,10 +7,22 @@ class UsersController < ApplicationController
   end
 
   def create
-    salted_password = BCrypt::Password.create(params[:password]).cost;
-    params[:password] = salted_password;
     user = User.create(user_param);
     render json: user;
+  end
+
+  def signup
+    check_username_taken =  User.find_by_username(params[:username]);
+    if !check_username_taken.nil?
+      render json: {error: 1};
+    else
+      check_email_taken = User.find_by_email(params[:email]);
+      if !check_email_taken.nil?
+        render json: {error: 2};
+      else
+        create();
+      end
+    end
   end
 
   def login

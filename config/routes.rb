@@ -3,7 +3,8 @@ Rails.application.routes.draw do
     resources :task
     resources :users do
       collection do
-        post 'login' 
+        post 'login'
+        post 'signup' 
       end 
     end
   end
