@@ -1,6 +1,4 @@
-require 'bcrypt'
 class UsersController < ApplicationController
-  include BCrypt
   def index
     users = User.order(:id);
     render json: users;
@@ -30,7 +28,13 @@ class UsersController < ApplicationController
     if user.nil? 
       render json: {};
     elsif user.password == params[:password]
-      render json: user;
+      token = Token.find_by_userId(user.id);
+      if token.nil?
+        new_token = Token.create(userId: user.id, username: params[:username], token: SecureRandom.alphanumeric(64));
+        render json: token;
+      else
+        render json: token;
+      end
     else
       render json: {};
     end
